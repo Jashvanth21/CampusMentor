@@ -1,0 +1,33 @@
+{
+  "name": "campusmentor-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-grade backend foundation for CampusMentor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed:admin": "node seeders/adminSeeder.js",
+    "seed:tests": "node scripts/seedMockTests.js",
+    "seed:mentors": "node scripts/seedMentors.js",
+    "seed:students": "node scripts/seedStudents.js",
+    "seed:attempts": "node scripts/seedAttempts.js",
+    "seed:drives": "node scripts/seedDrives.js",
+    "cleanup:placement-drives": "node scripts/cleanupPlacementDriveLegacyFields.js",
+    "populate:mentor-feedback": "node scripts/populateMentorFeedback.js",
+    "populate:placement-data": "node scripts/populatePlacementData.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.13.6",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 999px;
+  filter: blur(24px);
+}
+
+body::before {
+  top: -140px;
+  left: -120px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(113, 91, 255, 0.28) 0%, rgba(113, 91, 255, 0) 70%);
+}
+
+body::after {
+  right: -140px;
+  bottom: -160px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(39, 209, 255, 0.22) 0%, rgba(39, 209, 255, 0) 72%);
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+  font-family: "Segoe UI Variable Display", "Trebuchet MS", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(112, 87, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 85% 15%, rgba(34, 211, 238, 0.13), transparent 22%),
+    linear-gradient(180deg, #071120 0%, #09172a 44%, #08111d 100%);
+  color: #e8eefc;
+  min-height: 100vh;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+}
+
+:root {
+  --button-primary-gradient: linear-gradient(135deg, #8b5cf6 0%, #4f46e5 52%, #22d3ee 100%);
+  --button-secondary-gradient: linear-gradient(135deg, rgba(139, 92, 246, 0.18) 0%, rgba(79, 70, 229, 0.14) 52%, rgba(34, 211, 238, 0.16) 100%);
+  --button-primary-shadow: 0 12px 24px rgba(53, 76, 194, 0.28);
+  --button-secondary-shadow: 0 10px 20px rgba(7, 15, 29, 0.22);
+  --button-border-soft: rgba(147, 197, 253, 0.18);
+}
+
+.primary-button,
+.auth-button,
+.mentor-detail-btn,
+.run-btn,
+.submit-btn,
+.placement-apply-btn,
+.admin-action-btn,
+.admin-table-action-btn {
+  appearance: none;
+  border: 0;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: var(--button-primary-gradient);
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.1;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--button-primary-shadow);
+  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+}
+
+.secondary-button,
+.topbar-logout,
+.sidebar-logout {
+  appearance: none;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--button-border-soft);
+  background: var(--button-secondary-gradient);
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.1;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--button-secondary-shadow);
+  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease, background 200ms ease, opacity 200ms ease;
+}
+
+.primary-button:hover,
+.auth-button:hover,
+.mentor-detail-btn:hover,
+.run-btn:hover,
+.submit-btn:hover,
+.placement-apply-btn:hover,
+.admin-action-btn:hover,
+.admin-table-action-btn:hover,
+.secondary-button:hover,
+.topbar-logout:hover,
+.sidebar-logout:hover {
+  transform: translateY(-1px) scale(1.05);
+  filter: brightness(1.06);
+}
+
+.primary-button:hover,
+.auth-button:hover,
+.mentor-detail-btn:hover,
+.run-btn:hover,
+.submit-btn:hover,
+.placement-apply-btn:hover,
+.admin-action-btn:hover,
+.admin-table-action-btn:hover {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 16px 30px rgba(53, 76, 194, 0.34);
+}
+
+.secondary-button:hover,
+.topbar-logout:hover,
+.sidebar-logout:hover {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 14px 26px rgba(7, 15, 29, 0.3);
+}
+
+.primary-button:disabled,
+.auth-button:disabled,
+.mentor-detail-btn:disabled,
+.run-btn:disabled,
+.submit-btn:disabled,
+.placement-apply-btn:disabled,
+.admin-action-btn:disabled,
+.admin-table-action-btn:disabled,
+.secondary-button:disabled,
+.topbar-logout:disabled,
+.sidebar-logout:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+
+.button-flex-1 {
+  flex: 1 1 0;
+  width: 100%;
+}
